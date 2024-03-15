@@ -1,19 +1,25 @@
 # == Schema Information
 #
-# Table name: companies
+# Table name: users
 #
 #  id         :bigint           not null, primary key
-#  address    :string
-#  cnpj       :string
+#  email      :string
 #  name       :string
-#  ownername  :string
-#  whatsapp   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  company_id :bigint           not null
+#
+# Indexes
+#
+#  index_users_on_company_id  (company_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (company_id => companies.id)
 #
 require "test_helper"
 
-class CompanyTest < ActiveSupport::TestCase
+class UserTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
