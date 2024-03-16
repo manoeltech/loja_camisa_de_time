@@ -30,14 +30,4 @@ class Product < ApplicationRecord
   belongs_to :company
   belongs_to :user
   belongs_to :client
-
-  def sell
-    if self.quantify > 0
-      self.quantify -=  1
-      self.save!
-    else
-      errors.add(:quantify, "Não pode ser menor que zero")
-      false
-    end
-  end
 end
