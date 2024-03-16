@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+      product:
+        one: Produto
+        other: Produtos
+    attributes:
+      product:
+        name: Nome
+        value: Valor
+        description: Descrição
+        quantify: Quantidade no estoque
+        client_id: Cliente
+        user_id: Vendedor
+        company_id: Loja
+        status: Ativo?
