@@ -1,9 +1,17 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :set_product, only: %i[ show edit update destroy buy_product ]
 
   # GET /products or /products.json
   def index
     @products = Product.all
+
+    if params[:tab] == "active"
+      @products = Product.where(status: true)
+    elsif params[:tab] == "inactive"
+      @products = Product.where(status: false)
+    else
+      @products
+    end
   end
 
   # GET /products/1 or /products/1.json
@@ -57,6 +65,14 @@ class ProductsController < ApplicationController
     end
   end
 
+  def buy_product
+    @product.sell
+
+    respond_to do |format|
+      format.html { redirect_to products_url, notice: "Produto vendido com sucesso." }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
@@ -65,6 +81,9 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :value, :description, :quantify, :company_id, :user_id, :client_id)
+      params.require(:product).permit(
+        :name, :value, :description, :quantify, :company_id, :user_id, :client_id,
+        :status
+      )
     end
 end
