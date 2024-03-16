@@ -6,6 +6,7 @@
 #  description :text
 #  name        :string
 #  quantify    :integer
+#  status      :boolean          default(TRUE)
 #  value       :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
