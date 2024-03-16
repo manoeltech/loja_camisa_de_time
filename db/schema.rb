@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_15_195258) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_16_222451) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,11 +35,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_15_195258) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "homes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.integer "value"
@@ -50,6 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_15_195258) do
     t.bigint "client_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "status", default: true
     t.index ["client_id"], name: "index_products_on_client_id"
     t.index ["company_id"], name: "index_products_on_company_id"
     t.index ["user_id"], name: "index_products_on_user_id"
