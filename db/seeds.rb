@@ -6,12 +6,6 @@ Company.create(
   address: "Coremas - Cabo branco"
 )
 
-User.create!(
-  name: "Admin",
-  email: "admin@gmail.com",
-  company_id: 1
-
-)
 
 Client.create!(
   name: "Cliente teste",

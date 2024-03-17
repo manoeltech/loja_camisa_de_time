@@ -1,3 +1,4 @@
+module Admin
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy buy_product ]
 
@@ -86,4 +87,5 @@ class ProductsController < ApplicationController
         :status
       )
     end
+  end  
 end
