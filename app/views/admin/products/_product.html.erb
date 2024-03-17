@@ -30,9 +30,8 @@
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= product.description %></td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= product.quantify %></td>
                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                  <%= link_to "Ver", product, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-                  <%= link_to "Editar", edit_product_path(product), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-                  <%= button_to "Vender", buy_product_product_path(product), method: :post, class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+                  <%= link_to "Ver", admin_product_path, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+                  <%= link_to "Editar", edit_admin_product_path(product), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
                 </td>
               </tr>
               <% end %>
