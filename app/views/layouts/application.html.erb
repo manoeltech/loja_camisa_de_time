@@ -22,10 +22,14 @@
         <%= link_to "Produtos", products_path %></a>
         <%= link_to "Pedidos", "#" %></a>
         <%= link_to "Clientes", clients_path %></a>
-        <%= link_to "Usuários", users_path %></a>
       </nav>
       <div class="flex flex-1 items-center justify-end gap-x-8">
-        <p>Sair</p>
+      <% if user_signed_in? %>
+          <%= button_to "Sair", destroy_user_session_path, method: :delete, class:"navbar-link"  %>
+      <% else %>
+          <%= link_to "Criar conta", new_user_registration_path, :class => 'navbar-link'  %> |
+          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
       </div>
     </div>
     <!-- Mobile menu, show/hide based on menu open state. -->
@@ -59,6 +63,8 @@
 
   <body>
     <main class="container mx-auto mt-28 px-5 flex">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </main>
   </body>
