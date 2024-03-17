@@ -41,11 +41,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_17_143720) do
     t.text "description"
     t.integer "quantify"
     t.bigint "company_id", null: false
-    t.bigint "client_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "status", default: true
-    t.index ["client_id"], name: "index_products_on_client_id"
+    t.integer "size"
     t.index ["company_id"], name: "index_products_on_company_id"
   end
 
@@ -62,6 +61,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_17_143720) do
   end
 
   add_foreign_key "clients", "companies"
-  add_foreign_key "products", "clients"
   add_foreign_key "products", "companies"
 end
