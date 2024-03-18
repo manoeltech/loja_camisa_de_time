@@ -46,11 +46,11 @@
         </div>
 
         <div class="ml-2 flex cursor-pointer items-center gap-x-1 rounded-md border py-2 px-4 hover:bg-red-950">
-        <% if user_signed_in? %>
-          <%= button_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+        <% if client_signed_in? %>
+          <%= button_to "Sair", destroy_client_session_path, method: :delete, :class => 'navbar-link'  %>
         <% else %>
-          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+          <%= link_to "Sign up", new_client_registration_path, :class => 'navbar-link'  %> |
+          <%= link_to "Login", new_client_session_path, :class => 'navbar-link'  %>
         <% end %>
         </div>
       </div>
