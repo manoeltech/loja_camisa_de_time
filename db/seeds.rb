@@ -6,8 +6,3 @@ Company.create(
   address: "Coremas - Cabo branco"
 )
 
-
-Client.create!(
-  name: "Cliente teste",
-  company_id: 1
-)
