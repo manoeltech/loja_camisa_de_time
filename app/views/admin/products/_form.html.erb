@@ -31,6 +31,11 @@
     <%= form.number_field :quantify, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
+  <div class="my-5">
+    <%= form.label :product_image %>
+    <%= form.file_field :product_image %>
+  </div>
+
   <div class="my-5 flex items-center">
     <%= form.check_box :status, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mr-2" %>
     <%= form.label :status %>
