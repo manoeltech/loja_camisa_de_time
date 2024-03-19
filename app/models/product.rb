@@ -27,4 +27,6 @@
 class Product < ApplicationRecord
   belongs_to :company
   belongs_to :category, optional: true
+
+  has_one_attached :product_image
 end
