@@ -29,4 +29,7 @@ class Product < ApplicationRecord
   belongs_to :category, optional: true
 
   has_one_attached :product_image
+
+  validates :name, :quantify, :status, presence: true
+  validates :value, presence: true, numericality: { greater_than: 0 }
 end
