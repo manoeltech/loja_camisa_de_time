@@ -4,6 +4,9 @@ pt-BR:
       product:
         one: Produto
         other: Produtos
+      category:
+        one: Categoria
+        other: Categorias
     attributes:
       product:
         name: Nome
@@ -14,3 +17,6 @@ pt-BR:
         user_id: Vendedor
         company_id: Loja
         status: Ativo?
+      category:
+        name: Nome
+        

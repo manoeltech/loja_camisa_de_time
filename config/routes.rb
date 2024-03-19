@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :clients
   namespace :admin do
+    resources :categories
     root "dashboards#index"
     resources :products
-    end
-  devise_for :users
+    devise_for :users
+  end
+  devise_for :clients
   root "store_front#index"
 end
