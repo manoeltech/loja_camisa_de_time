@@ -56,21 +56,17 @@
       </div>
     </div>
 
-    <div class="mt-4 flex items-center justify-center">
- 
-
-      <div class="flex gap-x-8">
-        <span class="cursor-pointer rounded-sm py-1 px-2 text-sm font-medium hover:bg-red-950">Best seller</span>
-        <span class="cursor-pointer rounded-sm py-1 px-2 text-sm font-medium hover:bg-red-950">New Releases</span>
-        <span class="cursor-pointer rounded-sm py-1 px-2 text-sm font-medium hover:bg-red-950">Books</span>
-        <span class="cursor-pointer rounded-sm py-1 px-2 text-sm font-medium hover:bg-red-950">Computers</span>
-        <span class="cursor-pointer rounded-sm py-1 px-2 text-sm font-medium hover:bg-red-950">Fashion</span>
-        <span class="cursor-pointer rounded-sm py-1 px-2 text-sm font-medium hover:bg-red-950">Health</span>
-        <span class="cursor-pointer rounded-sm py-1 px-2 text-sm font-medium hover:bg-red-950">Pharmacy</span>
-        <span class="cursor-pointer rounded-sm py-1 px-2 text-sm font-medium hover:bg-red-950">Toys & Games</span>
-      </div>
-
-      <span class="cursor-pointer rounded-sm py-1 px-2 text-sm font-medium hover:bg-red-950">Becoma a seller</span>
+    <div class="mt-4 flex items-center justify-center gap-10">
+    <% if Category.present? %>
+      <% categories = Category.all.limit(10) %>
+      <% categories.all.each do |category| %>
+        <div class="flex gap-x-8">
+          <span class="cursor-pointer rounded-sm py-1 px-2 text-sm font-medium hover:bg-red-950"><%= category.name %></span>  
+        </div>
+      <% end %>
+    <% else %>
+      <p>Por favor, crie Categorias na área administrativa.</p>
+    <% end %>
     </div>
   </div>
 </div>

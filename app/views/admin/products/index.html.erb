@@ -23,6 +23,7 @@
               <tr>
                 <th scope="col" class="py-3.5 pl-4 pr-3 text-center text-sm font-semibold text-gray-900 sm:pl-0">Nome</th>
                 <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900">Valor</th>
+                <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900">Categoria</th>
                 <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900">Descrição</th>
                 <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900">Quantidade</th>
                 <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900">Status</th>
@@ -34,6 +35,7 @@
                 <tr class="text-center">
                   <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0"><%= product.name %></td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= product.value %></td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= product.category.name %></td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= product.description %></td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= product.quantify %></td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= product.status ? "Ativo" : "Inativo" %></td>
